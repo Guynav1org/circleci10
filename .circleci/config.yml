@@ -2,7 +2,7 @@
       version: 2.1
 
       orbs:
-        prisma: prisma_cloud/devops_security@2.0.0
+        prisma: prisma_cloud/devops_security@latest
 
       jobs:
           docker_build_and_save:
