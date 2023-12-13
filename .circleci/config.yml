@@ -1,0 +1,18 @@
+version: 2.1
+jobs:
+  docker_safe_build:
+    executor: pcs/compute
+    steps:
+      - checkout
+      - run: docker pull nginx
+      - pcs/scan_image:
+          prisma_cloud_compute_password: prisma_cloud_compute_password
+          prisma_cloud_compute_url: $prisma_cloud_compute_url
+          prisma_cloud_compute_username: $prisma_cloud_compute_username
+          prisma_cloud_scan_image: nginx
+orbs:
+  devops_security: prisma_cloud/devops_security@3.0.4
+workflows:
+  scan:
+    jobs:
+      - docker_safe_build
