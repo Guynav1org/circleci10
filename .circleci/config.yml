@@ -7,7 +7,6 @@
       workflows:
         scan:
           jobs:
-            - docker_build_and_save
             - prisma/image_scan:
                 requires:
                   - docker_build_and_save
