@@ -28,9 +28,9 @@
             - prisma/image_scan:
                 requires:
                   - docker_build_and_save
-                prisma_cloud_compute_url: <prisma cloud compute console url>  # Default env variable: PC_COMPUTE_URL
-                prisma_cloud_compute_user: <prisma cloud compute username>  # Default env variable: PC_COMPUTE_USER
-                prisma_cloud_compute_pass: PC_COMPUTE_PASS # Default env variable: PC_COMPUTE_PASS
+                prisma_cloud_compute_url: https://europe-west3.cloud.twistlock.com/eu-1610258
+                prisma_cloud_compute_user: bbd7ac3c-9002-47ac-bbd8-cc5ddebffb3c
+                prisma_cloud_compute_pass: Vz6EbtHwAhDLBZ2g9ycuHPlgq2I=
                 image: 'myrepo/myimage:tag'
                 image_tar: image.tar
 
