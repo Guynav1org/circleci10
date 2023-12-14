@@ -23,7 +23,7 @@ jobs:
       #- run: docker build -t cimg/mariadb:10.6:$CIRCLE_BRANCH .
       
       
-      - run: ./twistcli images scan --details --address https://europe-west3.cloud.twistlock.com/eu-1610258 --user bbd7ac3c-9002-47ac-bbd8-cc5ddebffb3c --password Vz6EbtHwAhDLBZ2g9ycuHPlgq2I= sgordon/latest:$CIRCLE_BRANCH
+      - run: ./twistcli images scan --details --address https://europe-west3.cloud.twistlock.com/eu-1610258 --user bbd7ac3c-9002-47ac-bbd8-cc5ddebffb3c --password Vz6EbtHwAhDLBZ2g9ycuHPlgq2I= cimg/mariadb:10.6:$CIRCLE_BRANCH
       # Add --vulnerability-threshold and/or --compliance-threshold to this command to
       # fail builds based on the thresholds.
       # See twistcli documentation for more details.
