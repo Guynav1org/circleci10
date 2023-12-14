@@ -19,8 +19,8 @@ jobs:
       # Build our project that is contained in the code
       # checked out above.
 
-      - run: pwd && ls -l 
-      - run: docker build -t cimg/mariadb:10.6:$CIRCLE_BRANCH .
+      #- run: pwd && ls -l 
+      #- run: docker build -t cimg/mariadb:10.6:$CIRCLE_BRANCH .
       
       
       - run: ./twistcli images scan --details --address https://europe-west3.cloud.twistlock.com/eu-1610258 --user bbd7ac3c-9002-47ac-bbd8-cc5ddebffb3c --password Vz6EbtHwAhDLBZ2g9ycuHPlgq2I= sgordon/latest:$CIRCLE_BRANCH
