@@ -1,18 +1,16 @@
-workflows: null
 version: 2.1
+
 jobs:
-  image_scan:
-    machine:
-      image: ubuntu-2004:2022.07.1
+  build:
+    docker:
+      - image: cimg/ruby:2.7.1-node
     steps:
-      - run: >
-          curl --progress-bar -L -k --header "authorization: Bearer
-
-          eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiZ25veV9wYWxvYWx0b25ldHdvcmtzX2NvbSIsImdyb3VwcyI6WyJhZG1pbnMiLCJkZXZvcHMiXSwicm9sZSI6ImFkbWluIiwicm9sZVBlcm1zIjpbWzI1NSwyNTUsMjU1LDI1NSwyNTUsMTI3LDFdLFsyNTUsMjU1LDI1NSwyNTUsMjU1LDEyNywxXV0sInBlcm1pc3Npb25zIjpbeyJwcm9qZWN0IjoiQ2VudHJhbCBDb25zb2xlIn1dLCJzZXNzaW9uVGltZW91dFNlYyI6ODY0MDAsImlzcyI6InR3aXN0bG9jayIsImV4cCI6MTcwMzgzMDkzNn0.u6ka5FJz8ecrpSbqElEGV5E4uH5z7pSo2P9Nj2nvYTA"
-
-          https://console-master-gnoy1123.gnoy1123.demo.twistlock.com/api/v1/util/twistcli
-
-          > twistcli; chmod a+x twistcli;
-      - run: ls -ltr
-      - run: chmod a+x twistcli
-      - run: ./twistcli images scan image_name
+      - checkout
+      - run:
+          name: "Update Node.js and npm"
+          command: |
+            curl -sSL "https://nodejs.org/dist/v11.10.0/node-v11.10.0-linux-x64.tar.xz" | sudo tar --strip-components=2 -xJ -C /usr/local/bin/ node-v11.10.0-linux-x64/bin/node
+            curl https://www.npmjs.com/install.sh | sudo bash
+      - run:
+          name: Check current version of node
+          command: node -v
