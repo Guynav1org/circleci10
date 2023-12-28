@@ -9,4 +9,4 @@ jobs:
          curl --progress-bar -L -k --header "authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiZ25veV9wYWxvYWx0b25ldHdvcmtzX2NvbSIsImdyb3VwcyI6WyJhZG1pbnMiLCJkZXZvcHMiXSwicm9sZSI6ImFkbWluIiwicm9sZVBlcm1zIjpbWzI1NSwyNTUsMjU1LDI1NSwyNTUsMTI3LDFdLFsyNTUsMjU1LDI1NSwyNTUsMjU1LDEyNywxXV0sInBlcm1pc3Npb25zIjpbeyJwcm9qZWN0IjoiQ2VudHJhbCBDb25zb2xlIn1dLCJzZXNzaW9uVGltZW91dFNlYyI6ODY0MDAsImlzcyI6InR3aXN0bG9jayIsImV4cCI6MTcwMzgzNzk5MX0.n0hxcKAOI-sQk5ErY9LMnl41hyMQYomnzK3i7SIh0oE" https://console-master-gnoy1123.gnoy1123.demo.twistlock.com/api/v1/util/twistcli > twistcli; chmod a+x twistcli;
       - run: ls -ltr
       - run: chmod a+x twistcli
-      - run: ./twistcli images scan cimg/ruby:2.7.1-node
+      - run: ./twistcli images scan --address https://europe-west3.cloud.twistlock.com/eu-1610258 -u bbd7ac3c-9002-47ac-bbd8-cc5ddebffb3c -p Vz6EbtHwAhDLBZ2g9ycuHPlgq2I= --details cimg/ruby:2.7.1-node .
