@@ -1,3 +1,4 @@
+workflows:
 version: 2.1
 jobs:
   image_scan:
