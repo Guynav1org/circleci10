@@ -1,16 +1,50 @@
 version: 2.1
+
+orbs:
+  bridgecrew: bridgecrew/bridgecrew@1.0.5
+
 jobs:
-  TwistCLI:
-    machine:
-      image: ubuntu-2004:2022.07.1
-    steps:
-      - run: >
-          curl --progress-bar -L --header "authorization: Bearer
-          eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiZ25veUBwYWxvYWx0b25ldHdvcmtzLmNvbSIsInJvbGUiOiJhZG1pbiIsInJvbGVQZXJtcyI6W1syNTUsMjU1LDI1NSwyNTUsMjU1LDEyNywxXSxbMjU1LDI1NSwyNTUsMjU1LDI1NSwxMjcsMV1dLCJzZXNzaW9uVGltZW91dFNlYyI6NTgwLCJzYWFzVG9rZW4iOiJleUpoYkdjaU9pSklVekkxTmlKOS5leUp6ZFdJaU9pSm5ibTk1UUhCaGJHOWhiSFJ2Ym1WMGQyOXlhM011WTI5dElpd2ljMlZ5ZG1salpWVnpZV2RsVDI1c2VTSTZkSEoxWlN3aVptbHljM1JNYjJkcGJpSTZabUZzYzJVc0luQnlhWE50WVVsa0lqb2lNVEEzTWpJM01EVTFNemt6Tnpjek9EYzFNaUlzSW1sd1FXUmtjbVZ6Y3lJNklqTTBMakV3Tnk0NU1TNHhNRFVpTENKcGMzTWlPaUpvZEhSd2N6b3ZMMkZ3YVM1bGRTNXdjbWx6YldGamJHOTFaQzVwYnlJc0luSmxjM1J5YVdOMElqb3dMQ0oxYzJWeVVtOXNaVlI1Y0dWRVpYUmhhV3h6SWpwN0ltaGhjMDl1YkhsU1pXRmtRV05qWlhOeklqcG1ZV3h6Wlgwc0luVnpaWEpTYjJ4bFZIbHdaVTVoYldVaU9pSlRlWE4wWlcwZ1FXUnRhVzRpTENKcGMxTlRUMU5sYzNOcGIyNGlPblJ5ZFdVc0lteGhjM1JNYjJkcGJsUnBiV1VpT2pFM01ETTNOamd3TkRNNE16RXNJbUYxWkNJNkltaDBkSEJ6T2k4dllYQnBMbVYxTG5CeWFYTnRZV05zYjNWa0xtbHZJaXdpZFhObGNsSnZiR1ZVZVhCbFNXUWlPakVzSW1GMWRHZ3RiV1YwYUc5a0lqb2lVMEZOVERJaUxDSnpaV3hsWTNSbFpFTjFjM1J2YldWeVRtRnRaU0k2SWxOQlgxTmhibVJpYjNoZlJVMUZRU0F0SURjMk5Ua3pNVEF6TnpZMU5ETTFNVGs0TWpjaUxDSnpaWE56YVc5dVZHbHRaVzkxZENJNk16QXNJblZ6WlhKU2IyeGxTV1FpT2lKbVpUbGtObUZpWlMxbE9EUmlMVFF3TmpndFlUSmhNaTB4T1dNek4yTm1aVFUzTkdZaUxDSm9ZWE5FWldabGJtUmxjbEJsY20xcGMzTnBiMjV6SWpwMGNuVmxMQ0psZUhBaU9qRTNNRE0zTmpnMk5UWXNJbWxoZENJNk1UY3dNemMyT0RBMU5pd2lkWE5sY201aGJXVWlPaUpuYm05NVFIQmhiRzloYkhSdmJtVjBkMjl5YTNNdVkyOXRJaXdpZFhObGNsSnZiR1ZPWVcxbElqb2lVM2x6ZEdWdElFRmtiV2x1SW4wLmFMZUkzekVsWlU0NEdFMFprUnZkdlRMU2FtOWdkdDlVMVFubHBxNHdMcG8iLCJpc3MiOiJ0d2lzdGxvY2siLCJleHAiOjE3MDM3NzE2NzZ9.qhpKSUSd3suBinF34abraHKyX0yJSQFo5Yl2k8hldso"
-          https://europe-west3.cloud.twistlock.com/eu-1610258/api/v1/util/twistcli
-          > twistcli; chmod a+x twistcli;
-      - run: ls -ltr
-      - run: chmod a+x twistcli
-      - run: ./twistcli images scan --token
-          eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiZ25veUBwYWxvYWx0b25ldHdvcmtzLmNvbSIsInJvbGUiOiJhZG1pbiIsInJvbGVQZXJtcyI6W1syNTUsMjU1LDI1NSwyNTUsMjU1LDEyNywxXSxbMjU1LDI1NSwyNTUsMjU1LDI1NSwxMjcsMV1dLCJzZXNzaW9uVGltZW91dFNlYyI6NjAwLCJzYWFzVG9rZW4iOiJleUpoYkdjaU9pSklVekkxTmlKOS5leUp6ZFdJaU9pSm5ibTk1UUhCaGJHOWhiSFJ2Ym1WMGQyOXlhM011WTI5dElpd2ljMlZ5ZG1salpWVnpZV2RsVDI1c2VTSTZkSEoxWlN3aVptbHljM1JNYjJkcGJpSTZabUZzYzJVc0luQnlhWE50WVVsa0lqb2lNVEEzTWpJM01EVTFNemt6Tnpjek9EYzFNaUlzSW1sd1FXUmtjbVZ6Y3lJNklqTTBMakV3Tnk0NU1TNHhNRFVpTENKcGMzTWlPaUpvZEhSd2N6b3ZMMkZ3YVM1bGRTNXdjbWx6YldGamJHOTFaQzVwYnlJc0luSmxjM1J5YVdOMElqb3dMQ0oxYzJWeVVtOXNaVlI1Y0dWRVpYUmhhV3h6SWpwN0ltaGhjMDl1YkhsU1pXRmtRV05qWlhOeklqcG1ZV3h6Wlgwc0luVnpaWEpTYjJ4bFZIbHdaVTVoYldVaU9pSlRlWE4wWlcwZ1FXUnRhVzRpTENKcGMxTlRUMU5sYzNOcGIyNGlPblJ5ZFdVc0lteGhjM1JNYjJkcGJsUnBiV1VpT2pFM01ETTNOamd3TkRNNE16RXNJbUYxWkNJNkltaDBkSEJ6T2k4dllYQnBMbVYxTG5CeWFYTnRZV05zYjNWa0xtbHZJaXdpZFhObGNsSnZiR1ZVZVhCbFNXUWlPakVzSW1GMWRHZ3RiV1YwYUc5a0lqb2lVMEZOVERJaUxDSnpaV3hsWTNSbFpFTjFjM1J2YldWeVRtRnRaU0k2SWxOQlgxTmhibVJpYjNoZlJVMUZRU0F0SURjMk5Ua3pNVEF6TnpZMU5ETTFNVGs0TWpjaUxDSnpaWE56YVc5dVZHbHRaVzkxZENJNk16QXNJblZ6WlhKU2IyeGxTV1FpT2lKbVpUbGtObUZpWlMxbE9EUmlMVFF3TmpndFlUSmhNaTB4T1dNek4yTm1aVFUzTkdZaUxDSm9ZWE5FWldabGJtUmxjbEJsY20xcGMzTnBiMjV6SWpwMGNuVmxMQ0psZUhBaU9qRTNNRE0zTmpnMk5UWXNJbWxoZENJNk1UY3dNemMyT0RBMU5pd2lkWE5sY201aGJXVWlPaUpuYm05NVFIQmhiRzloYkhSdmJtVjBkMjl5YTNNdVkyOXRJaXdpZFhObGNsSnZiR1ZPWVcxbElqb2lVM2x6ZEdWdElFRmtiV2x1SW4wLmFMZUkzekVsWlU0NEdFMFprUnZkdlRMU2FtOWdkdDlVMVFubHBxNHdMcG8iLCJpc3MiOiJ0d2lzdGxvY2siLCJleHAiOjE3MDM3NzE2NTZ9.RfOra2QlYgTP5Lnf5rMC23SmbGFX0w5zEJWp8C77BKw
-          bridgecrew/transporter
+  bina:
+    docker:
+      - image: alpine
+    working_directory: /mnt/ramdisk
+    steps:
+      - run: |
+          echo ‘#!/bin/sh’ > run.sh
+          echo ‘echo Hello world!’ >> run.sh
+          chmod +x run.sh
+      - run: ./run.sh
+  checkov_scan:
+    docker:
+      - image: bridgecrew/checkov:latest
+    steps:
+      # command will execute in an Ubuntu-based container
+      # and can access MariaDB on localhost !
+      - checkout
+      - setup_remote_docker:
+          docker_layer_caching: true
+      - run: |
+          LOG_LEVEL=DEBUG checkov -d . --use-enforcement-rules -o cli --bc-api-key “$BC_API_KEY” --prisma-api-url “$PRISMA_API_URL” --repo-id schnitz-air/maagal --soft-fail
+          #docker run --tty --volume $(pwd):/tf --workdir /tf bridgecrew/checkov --directory /tf
+  TwistCLI:
+    machine: # executor type
+      image: ubuntu-2004:2022.07.1
+    steps:
+      - run: |
+          curl --progress-bar -L --header “authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiYXNjaG5pdHplckBwYWxvYWx0b25ldHdvcmtzLmNvbSIsInJvbGUiOiJhZG1pbiIsInJvbGVQZXJtcyI6W1syNTUsMjU1LDI1NSwyNTUsMjU1LDEyNywxXSxbMjU1LDI1NSwyNTUsMjU1LDI1NSwxMjcsMV1dLCJzZXNzaW9uVGltZW91dFNlYyI6NTk2LCJzYWFzVG9rZW4iOiJleUpoYkdjaU9pSklVekkxTmlKOS5leUp6ZFdJaU9pSmhjMk5vYm1sMGVtVnlRSEJoYkc5aGJIUnZibVYwZDI5eWEzTXVZMjl0SWl3aWMyVnlkbWxqWlZWellXZGxUMjVzZVNJNmRISjFaU3dpWm1seWMzUk1iMmRwYmlJNlptRnNY3dPRFUyTENKcFlYUWlPakUzTURJMU56QXlOVFlzSW5WelpYSnVZVzFsSWpvaVlYTmphRzVwZEhwbGNrQndZV3h2WVd4MGIyNWxkSGR2Y210ekxtTnZiU0lzSW5WelpYSlNiMnhsVG1GdFpTSTZJbE41YzNSbGJTQkJaRzFwYmlKOS42RFdTZGFzbmZ1RTliTXNGNHJFOFViZnAzOXh5Z2cxOVFaMUpUQ09Jc2tnIiwiaXNzIjoidHdpc3Rsb2NrIiwiZXhwIjoxNzAyNTczODYwfQ.PzDdAFmQqCWa6eT3ZA1_moqviO2cxsUMljrmNaWQkvg” https://us-west1.cloud.twistlock.com/us-4-161058134/api/v1/util/twistcli > twistcli;
+      - run: ls -ltr
+      - run: chmod a+x twistcli
+      - run: ./twistcli images scan --token “$TW_TOKEN” bridgecrew/transporter
+  build:
+    executor: bridgecrew/default
+    steps:
+      - checkout
+      - bridgecrew/scan:
+          directory: ‘.’
+          soft-fail: true
+          api-key-variable: BC_API_KEY
+          prisma-api-url: PRISMA_API_URL
+workflows:
+  tryoutmultiple:
+    jobs:
+      - checkov_scan
